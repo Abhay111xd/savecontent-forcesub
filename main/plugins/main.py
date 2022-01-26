@@ -94,7 +94,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                 )
             await edit.delete()
         except Exception as e:
-            await edit.edit(f'ERROR: {str(e)}')
+            await edit.edit(f'𝐄𝐫𝐫𝐨𝐫: {str(e)}')
             return 
     else:
         chat =  msg_link.split("/")[-2]
