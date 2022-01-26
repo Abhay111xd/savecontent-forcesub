@@ -10,7 +10,7 @@ import asyncio, subprocess, re, os, time
 async def join(client, invite_link):
     try:
         await client.join_chat(invite_link)
-        return "𝐍𝐨𝐰 𝐬𝐞𝐧𝐝 𝐲𝐨𝐮𝐫 𝐦𝐞𝐬𝐬𝐚𝐠𝐞 𝐥𝐢𝐧𝐤."
+        return "✅ 𝐍𝐨𝐰 𝐬𝐞𝐧𝐝 𝐲𝐨𝐮𝐫 𝐦𝐞𝐬𝐬𝐚𝐠𝐞 𝐥𝐢𝐧𝐤."
     except BadRequest:
         return "𝐒𝐨𝐦𝐞𝐭𝐡𝐢𝐧𝐠 𝐰𝐞𝐧𝐭 𝐰𝐫𝐨𝐧𝐠. 𝐈 𝐠𝐮𝐞𝐬𝐬 𝐲𝐨𝐮𝐫 𝐥𝐢𝐧𝐤 𝐢𝐬 𝐢𝐧𝐯𝐚𝐥𝐢𝐝 𝐨𝐫 𝐞𝐱𝐩𝐢𝐫𝐞𝐝."
     except FloodWait:
