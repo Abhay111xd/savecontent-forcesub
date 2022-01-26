@@ -49,12 +49,12 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                 progress=progress_for_pyrogram,
                 progress_args=(
                     userbot,
-                    "**DOWNOOADING:**\n",
+                    "**𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠:**\n",
                     edit,
                     time.time()
                 )
             )
-            await edit.edit('Trying to Upload.')
+            await edit.edit('𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠.')
             caption = ""
             if msg.text is not None:
                 caption = msg.text
@@ -72,7 +72,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                     progress=progress_for_pyrogram,
                     progress_args=(
                         client,
-                        '**UPLOADING:**\n',
+                        '**𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠:**\n',
                         edit,
                         time.time()
                     )
@@ -87,7 +87,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                     progress=progress_for_pyrogram,
                     progress_args=(
                         client,
-                        '**UPLOADING:**\n',
+                        '**𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠:**\n',
                         edit,
                         time.time()
                     )
@@ -106,7 +106,7 @@ async def clone(bot, event):
     link = get_link(event.text)
     if not link:
         return
-    edit = await bot.send_message(event.chat.id, 'Trying to process.')
+    edit = await bot.send_message(event.chat.id, '𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠.')
     if 't.me/+' in link:
         xy = await join(userbot, link)
         await edit.edit(xy)
@@ -115,9 +115,9 @@ async def clone(bot, event):
         try:
             await get_msg(userbot, bot, event.chat.id, link, edit) 
         except FloodWait:
-            return await edit.edit('Too many requests, try again later.')
+            return await edit.edit('𝐎𝐨𝐩𝐬! 𝐅𝐥𝐨𝐨𝐝 𝐰𝐚𝐢𝐭 𝐞𝐫𝐫𝐨𝐫, 𝐩𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐩𝐨𝐫𝐭 𝐢𝐧 𝐬𝐮𝐩𝐩𝐨𝐫𝐭 𝐠𝐫𝐨𝐮𝐩.')
         except ValueError:
-            return await edit.edit('Send Only message link or Private channel invites.')
+            return await edit.edit('𝐒𝐞𝐧𝐝 𝐨𝐧𝐥𝐲 𝐢𝐧𝐯𝐢𝐭𝐞 𝐥𝐢𝐧𝐤 𝐨𝐫 𝐦𝐞𝐬𝐬𝐚𝐠𝐞 𝐥𝐢𝐧𝐤.')
         except Exception as e:
-            return await edit.edit(f'Error: `{str(e)}`')         
+            return await edit.edit(f'𝐄𝐫𝐫𝐨𝐫: `{str(e)}`')         
           
