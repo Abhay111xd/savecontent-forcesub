@@ -3,8 +3,8 @@ import os
 import time
 import json
 
-FINISHED_PROGRESS_STR = "█"
-UN_FINISHED_PROGRESS_STR = ""
+FINISHED_PROGRESS_STR = "⬢"
+UN_FINISHED_PROGRESS_STR = "⬡"
 DOWNLOAD_LOCATION = "/app"
 
 
@@ -39,7 +39,7 @@ async def progress_for_pyrogram(
             ''.join([UN_FINISHED_PROGRESS_STR for i in range(10 - math.floor(percentage / 10))]),
             round(percentage, 2))
 
-        tmp = progress + "GROSSS: {0} of {1}\n\nSpeed: {2}/s\n\nETA: {3}\n".format(
+        tmp = progress + "𝐆𝐫𝐨𝐬𝐬: {0} of {1}\n\n𝐒𝐩𝐞𝐞𝐝: {2}/s\n\n𝐄𝐓𝐀: {3}\n".format(
             humanbytes(current),
             humanbytes(total),
             humanbytes(speed),
