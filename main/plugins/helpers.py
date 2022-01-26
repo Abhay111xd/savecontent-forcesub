@@ -16,7 +16,7 @@ async def join(client, invite_link):
     except FloodWait:
         return "𝐅𝐥𝐨𝐨𝐝 𝐰𝐚𝐢𝐭 𝐞𝐫𝐫𝐨𝐫, 𝐏𝐥𝐞𝐚𝐬𝐞 𝐭𝐫𝐲 𝐚𝐠𝐚𝐢𝐧 𝐥𝐚𝐭𝐞𝐫."
     except Exception as e:
-        return "𝐅𝐥𝐨𝐨𝐝 ghffharshit𝐰𝐚𝐢𝐭 𝐞𝐫𝐫𝐨𝐫, 𝐏𝐥𝐞𝐚𝐬𝐞 𝐭𝐫𝐲 𝐚𝐠𝐚𝐢𝐧 𝐥𝐚𝐭𝐞𝐫."
+        return f"{str(e)}
            
 #Regex---------------------------------------------------------------------------------------------------------------
 #to get the url from event
