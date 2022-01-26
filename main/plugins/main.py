@@ -54,7 +54,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                     time.time()
                 )
             )
-            await edit.edit('𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠.')
+            await edit.edit('𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠...')
             caption = ""
             if msg.text is not None:
                 caption = msg.text
