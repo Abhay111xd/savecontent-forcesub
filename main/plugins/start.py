@@ -13,8 +13,8 @@ st = "𝐇𝐢,\n 𝐢 𝐚𝐦 𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦𝐦𝐞𝐫𝐬
 async def start(event):
     await event.reply(f'{st}', 
                       buttons=[
-                              [Button.inline("SET THUMB.", data="sett"),
-                               Button.inline("REM THUMB.", data="remt")]
+                              [Button.inline("𝗨𝗽𝗱𝗮𝘁𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹.", url="https://t.me/pyrogrammers"),
+                               Button.inline("𝗦𝘂𝗽𝗽𝗼𝗿𝘁 𝗚𝗿𝗼𝘂𝗽", url="https://t.me/+7ScFy39Vckk5MWQ1")]
                               ])
     try:
         await Bot.start()
