@@ -94,7 +94,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                 )
             await edit.delete()
         except Exception as e:
-            await edit.edit(f'𝐄𝐫𝐫𝐨𝐫: {str(e)}')
+            await edit.edit(f'𝐄𝐫𝐫𝐨𝐫: 𝐓𝐡𝐢𝐬 𝐞𝐫𝐫𝐨𝐫 𝐦𝐚𝐲 𝐛𝐞 𝐨𝐜𝐜𝐮𝐫𝐞𝐝 𝐛𝐞𝐜𝐚𝐮𝐬𝐞 𝐲𝐨𝐮 𝐡𝐚𝐯𝐞 𝐧𝐨𝐭 𝐬𝐞𝐧𝐭 𝐢𝐧𝐯𝐢𝐭𝐞 𝐥𝐢𝐧𝐤 𝐨𝐟 𝐲𝐨𝐮𝐫 𝐜𝐡𝐚𝐧𝐧𝐞𝐥 𝐲𝐞𝐭.')
             return 
     else:
         chat =  msg_link.split("/")[-2]
