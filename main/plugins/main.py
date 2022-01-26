@@ -119,5 +119,5 @@ async def clone(bot, event):
         except ValueError:
             return await edit.edit('𝐒𝐞𝐧𝐝 𝐨𝐧𝐥𝐲 𝐢𝐧𝐯𝐢𝐭𝐞 𝐥𝐢𝐧𝐤 𝐨𝐫 𝐦𝐞𝐬𝐬𝐚𝐠𝐞 𝐥𝐢𝐧𝐤.')
         except Exception as e:
-            return await edit.edit(f'𝐄𝐫𝐫a𝐫: `{str(e)}`')         
+            return await edit.edit(f'𝐄𝐫𝐫𝐨𝐫: `{str(e)}`')         
           
