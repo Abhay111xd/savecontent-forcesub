@@ -15,7 +15,7 @@ async def start(event):
                       buttons=[
                         [Button.url("Updates Channel", url="https://t.me/pyrogrammers"),
                          Button.url("Support Group", url="https://t.me/+7ScFy39Vckk5MWQ1")],
-                        [Button.url("Updates Channel", url="https://t.me/pyrogrammers")],
+                        [Button.url("YouTube Channel", url="https://youtube.com/channel/UC2anvk7MNeNzJ6B4c0SZepw")],
                     ])
     try:
         await Bot.start()
