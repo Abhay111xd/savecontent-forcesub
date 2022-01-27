@@ -22,7 +22,13 @@ async def start(event):
             pass
         else:
             return
-    
+
+# start help Message
+@bot.on(events.NewMessage(pattern="^/help$"))
+async def search(event):
+    await event.reply('<b><u>This is a help message will be updated soon</b></u>', parse_mode="HTML")
+#end help Message
+
 @bot.on(events.callbackquery.CallbackQuery(data="sett"))
 async def sett(event):    
     Drone = event.client                    
