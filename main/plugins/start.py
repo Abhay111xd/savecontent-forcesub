@@ -13,8 +13,8 @@ st = "𝐇𝐢,\n𝐈 𝐚𝐦 @Pyrogrammers 𝐒𝐚𝐯𝐞 𝐫𝐞𝐬𝐭�
 async def start(event):
     await event.reply(f'{st}', 
                       buttons=[
-                        [Button.url("Updates Channel", url="https://t.me/pyrogrammers")],
-                        [Button.url("Support Group", url="https://t.me/+7ScFy39Vckk5MWQ1")]
+                        [Button.url("Updates Channel", url="https://t.me/pyrogrammers"),
+                         Button.url("Support Group", url="https://t.me/+7ScFy39Vckk5MWQ1")]
                     ])
     try:
         await Bot.start()
