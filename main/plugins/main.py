@@ -49,12 +49,12 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                 progress=progress_for_pyrogram,
                 progress_args=(
                     userbot,
-                    "**𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠:**\n",
+                    "**<b><u>Downloading<b><u>:**\n",
                     edit,
                     time.time()
                 )
             )
-            await edit.edit('𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠...')
+            await edit.edit('<b><u>Uploading...</b></u>')
             caption = ""
             if msg.text is not None:
                 caption = msg.text
@@ -72,7 +72,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                     progress=progress_for_pyrogram,
                     progress_args=(
                         client,
-                        '**𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠:**\n',
+                        '<b><u>Uploading...</b></u>\n',
                         edit,
                         time.time()
                     )
@@ -87,14 +87,14 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                     progress=progress_for_pyrogram,
                     progress_args=(
                         client,
-                        '**𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠:**\n',
+                        '<b><u>Uploading...</b></u>:\n',
                         edit,
                         time.time()
                     )
                 )
             await edit.delete()
         except Exception as e:
-            await edit.edit(f'𝐄𝐫𝐫𝐨𝐫: 𝐓𝐡𝐢𝐬 𝐞𝐫𝐫𝐨𝐫 𝐦𝐚𝐲 𝐛𝐞 𝐨𝐜𝐜𝐮𝐫𝐞𝐝 𝐛𝐞𝐜𝐚𝐮𝐬𝐞 𝐲𝐨𝐮 𝐡𝐚𝐯𝐞 𝐧𝐨𝐭 𝐬𝐞𝐧𝐭 𝐢𝐧𝐯𝐢𝐭𝐞 𝐥𝐢𝐧𝐤 𝐨𝐟 𝐲𝐨𝐮𝐫 𝐜𝐡𝐚𝐧𝐧𝐞𝐥 𝐲𝐞𝐭.')
+            await edit.edit(f'**Hell**, it is private Channel and i am unable to access it, First send me <b>invite link</b> of this Channel after that send this post link again.')
             return 
     else:
         chat =  msg_link.split("/")[-2]
@@ -106,7 +106,7 @@ async def clone(bot, event):
     link = get_link(event.text)
     if not link:
         return
-    edit = await bot.send_message(event.chat.id, '𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠.')
+    edit = await bot.send_message(event.chat.id, '<b><u>Please wait...</b></u>')
     if 't.me/+' in link:
         xy = await join(userbot, link)
         await edit.edit(xy)
@@ -115,9 +115,9 @@ async def clone(bot, event):
         try:
             await get_msg(userbot, bot, event.chat.id, link, edit) 
         except FloodWait:
-            return await edit.edit('𝐎𝐨𝐩𝐬! 𝐅𝐥𝐨𝐨𝐝 𝐰𝐚𝐢𝐭 𝐞𝐫𝐫𝐨𝐫, 𝐩𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐩𝐨𝐫𝐭 𝐢𝐧 𝐬𝐮𝐩𝐩𝐨𝐫𝐭 𝐠𝐫𝐨𝐮𝐩.')
+            return await edit.edit('Oops! Flood wait error, Please report in support Group.')
         except ValueError:
-            return await edit.edit('𝐔𝐧𝐚𝐛𝐥𝐞 𝐭𝐨 𝐣𝐨𝐢𝐧 𝐲𝐨𝐮𝐫 𝐜𝐡𝐚𝐧𝐧𝐞𝐥, 𝐩𝐥𝐞𝐚𝐬𝐞 𝐜𝐡𝐞𝐜𝐤 𝐲𝐨𝐮𝐫 𝐢𝐧𝐯𝐢𝐭𝐞 𝐥𝐢𝐧𝐤.')
+            return await edit.edit('Unable to join your private restricted Channel, Please check your invite link or report in support group.')
         except Exception as e:
-            return await edit.edit(f'𝐄𝐫𝐫𝐨𝐫: `{str(e)}`')         
+            return await edit.edit(f'Error: `{str(e)}`')         
           
