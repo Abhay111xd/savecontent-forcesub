@@ -106,7 +106,7 @@ async def clone(bot, event):
     link = get_link(event.text)
     if not link:
         return
-    edit = await bot.send_message(event.chat.id, '<b><u>Please wait...</b></u>')
+    edit = await bot.send_message(event.chat.id, '⏳')
     if 't.me/+' in link:
         xy = await join(userbot, link)
         await edit.edit(xy)
