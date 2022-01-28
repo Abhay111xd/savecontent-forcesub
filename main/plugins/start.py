@@ -33,7 +33,7 @@ async def search(event):
     await event.reply('<b><u>For Public Restricted Channel contents.</b></u>\nTo get public restricted Channel contents, just send your Post link i will give you that post without Downloading.\n\n<b><u>For Private Restricted Channel contents.</b></u>\nTo get private restricted Channel contents, First send me Channel invite link so that i can join your channel after that send me post link of your restricted Channel to get that post.', parse_mode="HTML")
 #end help Message
 
-@bot.on(events.callbackquery.CallbackQuery(data="sett"))
+@bot.on(events.NewMessage(pattern="/setthumb"))
 async def sett(event):    
     Drone = event.client                    
     button = await event.get_message()
@@ -57,7 +57,7 @@ async def sett(event):
         os.rename(path, f'./{event.sender_id}.jpg')
         await t.edit("𝐓𝐡𝐮𝐦𝐛𝐧𝐚𝐢𝐥 𝐬𝐚𝐯𝐞𝐝!")
         
-@bot.on(events.callbackquery.CallbackQuery(data="remt"))
+@bot.on(events.NewMessage(pattern="/delthumb"))
 async def remt(event):  
     Drone = event.client            
     await event.edit('Trying.')
