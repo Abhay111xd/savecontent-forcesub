@@ -7,7 +7,7 @@ from telethon import events, Button, TelegramClient
 from pyrogram import idle
 from main.plugins.main import Bot, userbot
 
-st = "**<b><u>Hii,\nI am @Pyrogrammers Save restricted Contents bot.</b></u>\nSend me any public or private restricted Channel post link.\nI will give you that post.\nHit /help to know more."
+st = "**<b>Hii,\nI am @Pyrogrammers Save restricted Contents bot.</b>\nSend me any public or private restricted Channel post link.\nI will give you that post.\n<b><u>Hit /help to know more.</b></u>"
 
 @bot.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
