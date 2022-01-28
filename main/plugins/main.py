@@ -94,7 +94,7 @@ async def get_msg(userbot, client, sender, msg_link, edit):
                 )
             await edit.delete()
         except Exception as e:
-            await edit.edit(f'**Hell**, it is private Channel and i am unable to access it, First send me <b>invite link</b> of this Channel after that send this post link again.')
+            await edit.edit(f'⚠️**Hell**, it is private Channel and i am unable to access it, First send me <b>invite link</b> of this Channel after that send this post link again.')
             return 
     else:
         chat =  msg_link.split("/")[-2]
