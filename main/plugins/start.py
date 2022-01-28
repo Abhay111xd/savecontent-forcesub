@@ -7,7 +7,7 @@ from telethon import events, Button, TelegramClient
 from pyrogram import idle
 from main.plugins.main import Bot, userbot
 
-st = "𝐇𝐢,\n𝐈 𝐚𝐦 @Pyrogrammers 𝐒𝐚𝐯𝐞 𝐫𝐞𝐬𝐭𝐫𝐢𝐜𝐭𝐞𝐝 𝐜𝐨𝐧𝐭𝐞𝐧𝐭 𝐛𝐨𝐭.\n𝐘𝐨𝐮 𝐜𝐚𝐧 𝐬𝐚𝐯𝐞 𝐜𝐨𝐧𝐭𝐞𝐧𝐭𝐬 𝐨𝐟 𝐛𝐨𝐭𝐡 𝐩𝐫𝐢𝐯𝐚𝐭𝐞 𝐚𝐧𝐝 𝐩𝐮𝐛𝐥𝐢𝐜 𝐜𝐡𝐚𝐧𝐧𝐞𝐥 𝐮𝐬𝐢𝐧𝐠 𝐭𝐡𝐢𝐬 𝐛𝐨𝐭.\n𝖲𝖾𝗇𝖽 𝗆𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾 𝗅𝗂𝗇𝗄 𝗍𝗈 𝗀𝖾𝗍 𝗌𝗍𝖺𝗋𝗍𝖾𝖽."
+st = "<b><u>Hii,\n<b><u>I am @Pyrogrammers Save restricted Contents bot.</b></u>\nSend me any public or private restricted Channel post link.\nI will give you that post.\n Hit /help to know more."
 
 @bot.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
@@ -30,7 +30,7 @@ async def start(event):
 # start help Message
 @bot.on(events.NewMessage(pattern="^/help$"))
 async def search(event):
-    await event.reply('<b><u>This is a help message will be updated soon</b></u>', parse_mode="HTML")
+    await event.reply('<b><u>For Public Restricted Channel contents.</b></u>\nTo get public restricted Channel contents, just send your Post link i will give you that post without Downloading.\n\n<b><u>For Private Restricted Channel contents.</b></u>\nTo get private restricted Channel contents, First send me Channel invite link so that i can join your channel after that send me post link of your restricted Channel to get that post.', parse_mode="HTML")
 #end help Message
 
 @bot.on(events.callbackquery.CallbackQuery(data="sett"))
