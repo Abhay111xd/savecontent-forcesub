@@ -10,11 +10,11 @@ import asyncio, subprocess, re, os, time
 async def join(client, invite_link):
     try:
         await client.join_chat(invite_link)
-        return "✅ 𝐓𝐡𝐢𝐬 𝐜𝐡𝐚𝐧𝐧𝐞𝐥 𝐢𝐬 𝐧𝐨𝐰 𝐬𝐮𝐩𝐩𝐨𝐫𝐭𝐞𝐝, 𝐧𝐨𝐰 𝐬𝐞𝐧𝐝 𝐦𝐞𝐬𝐬𝐚𝐠𝐞 𝐥𝐢𝐧𝐤 𝐭𝐨 𝐠𝐞𝐭 𝐭𝐡𝐞 𝐩𝐨𝐬𝐭."
+        return "✅ **This channel is now supported, Now send me post link to get that post.**"
     except BadRequest:
-        return "𝐒𝐨𝐦𝐞𝐭𝐡𝐢𝐧𝐠 𝐰𝐞𝐧𝐭 𝐰𝐫𝐨𝐧𝐠. 𝐈 𝐠𝐮𝐞𝐬𝐬 𝐲𝐨𝐮𝐫 𝐥𝐢𝐧𝐤 𝐢𝐬 𝐢𝐧𝐯𝐚𝐥𝐢𝐝 𝐨𝐫 𝐞𝐱𝐩𝐢𝐫𝐞𝐝."
+        return "**Something Went wrong. I guess your link is invalid or expired or you have already Sent me link.**"
     except FloodWait:
-        return "𝐅𝐥𝐨𝐨𝐝 𝐰𝐚𝐢𝐭 𝐞𝐫𝐫𝐨𝐫, 𝐏𝐥𝐞𝐚𝐬𝐞 𝐭𝐫𝐲 𝐚𝐠𝐚𝐢𝐧 𝐥𝐚𝐭𝐞𝐫."
+        return "Flood wait error, Please report in Support Group."
     except Exception as e:
         return f"{str(e)}"
            
