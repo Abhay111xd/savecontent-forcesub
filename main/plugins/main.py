@@ -117,7 +117,7 @@ async def clone(bot, event):
         except FloodWait:
             return await edit.edit('Oops! Flood wait error, Please report in support Group.')
         except ValueError:
-            return await edit.edit('Unable to join your private restricted Channel, Please check your invite link or report in support group.')
+            return await edit.edit('**❌ Unable to join your private restricted Channel, Please check your invite link or report in support group.**')
         except Exception as e:
             return await edit.edit(f'Error: `{str(e)}`')         
           
