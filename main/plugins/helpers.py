@@ -2,7 +2,6 @@
 
 from pyrogram import Client
 from pyrogram.errors import FloodWait, BadRequest
-from main.plugins.main import Bot, userbot
 from .. import bot
 from telethon import events, Button, TelegramClient
 #What the hell is it??
