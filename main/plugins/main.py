@@ -57,8 +57,8 @@ def thumbnail(sender):
          return None
       
 async def get_msg(userbot, client, sender, msg_link, edit):
-  ok = await bot(GetFullUserRequest(event.sender_id))
-  if (await check_user(event.sender_id)) == False:
+    ok = await bot(GetFullUserRequest(event.sender_id))
+    if (await check_user(event.sender_id)) == False:
         return
     chat = ""
     msg_id = int(msg_link.split("/")[-1])
