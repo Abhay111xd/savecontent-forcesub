@@ -122,6 +122,8 @@ async def get_msg(userbot, client, sender, msg_link, edit):
         
 @Bot.on_message(filters.private & filters.incoming)
 async def clone(bot, event):            
+  if (await check_user(event.sender_id)) is False:
+        return await event.reply(f"{ok.user.first_name}, please join my channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/BotzHub")])
     link = get_link(event.text)
     if not link:
         return
