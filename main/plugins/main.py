@@ -122,7 +122,8 @@ async def get_msg(userbot, client, sender, msg_link, edit):
         
 @Bot.on_message(filters.private & filters.incoming)
 async def clone(bot, event):            
-    if (await check_user(event.sender_id)) is False:
+    ok = await bot(GetFullUserRequest(event.sender_id))
+    if (await check_user(event.sender_id)) == False:
         return
     link = get_link(event.text)
     if not link:
