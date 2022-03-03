@@ -2,35 +2,14 @@
 
 from pyrogram import Client
 from pyrogram.errors import FloodWait, BadRequest
-from .. import bot
-from telethon import events, Button, TelegramClient
-#What the hell is it??
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.errors.rpcerrorlist import UserNotParticipantError
-from telethon.tl.functions.channels import GetParticipantRequest
-#end
 import asyncio, subprocess, re, os, time
 
 
-#remove it
-#join check
-async def check_user(id):
-    ok = True
-    try:
-        await bot(GetParticipantRequest(channel='@pyrogrammers', participant=id))
-        ok = True
-    except UserNotParticipantError:
-        ok = False
-    return ok
-#end
 
 
 #Join private chat-------------------------------------------------------------------------------------------------------------
 
 async def join(client, invite_link):
-    ok = await bot(GetFullUserRequest(event.sender_id))
-    if (await check_user(event.sender_id)) == False:
-        return await event.reply(f"{ok.user.first_name}, please join my channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/BotzHub")])
     try:
         await client.join_chat(invite_link)
         return "✅ **This channel is now supported, Now send me post link to get that post.**"
