@@ -3,6 +3,14 @@
 from main.plugins.helpers import get_link, join, screenshot
 from main.plugins.display_progress import progress_for_pyrogram
 
+#What the hell is it??
+from .. import bot
+from telethon import events, Button, TelegramClient
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.errors.rpcerrorlist import UserNotParticipantError
+from telethon.tl.functions.channels import GetParticipantRequest
+#end
+
 from decouple import config
 
 API_ID = config("API_ID", default=None, cast=int)
@@ -18,6 +26,18 @@ import re, time, asyncio, logging, os
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
+
+#remove it
+#join check
+async def check_user(id):
+    ok = True
+    try:
+        await bot(GetParticipantRequest(channel='@pyrogrammers', participant=id))
+        ok = True
+    except UserNotParticipantError:
+        ok = False
+    return ok
+#end
 
 Bot = Client(
     "Simple-Pyrogram-Bot",
@@ -103,6 +123,9 @@ async def get_msg(userbot, client, sender, msg_link, edit):
         
 @Bot.on_message(filters.private & filters.incoming)
 async def clone(bot, event):            
+   ok = await bot(GetFullUserRequest(event.sender_id))
+    if (await check_user(event.sender_id)) == False:
+        return await event.reply(f"{ok.user.first_name}, please join my channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/BotzHub")])
     link = get_link(event.text)
     if not link:
         return
