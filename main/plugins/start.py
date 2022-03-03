@@ -25,11 +25,9 @@ async def check_user(id):
 #end
 @bot.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
-    #remove it
-     ok = await Bot(GetFullUserRequest(event.sender_id))
+    ok = await Bot(GetFullUserRequest(event.sender_id))
     if (await check_user(event.sender_id)) == False:
         return await event.edit(f"{ok.user.first_name}, please join my channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/BotzHub")])
-    #end
     await event.reply(f'{st}', 
                       buttons=[
                         [Button.url("Updates Channel", url="https://t.me/pyrogrammers"),
