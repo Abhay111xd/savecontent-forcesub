@@ -123,12 +123,12 @@ async def get_msg(userbot, client, sender, msg_link, edit):
         
 @Bot.on_message(filters.private & filters.incoming)
 async def clone(bot, event):            
-    ok = await bot(GetFullUserRequest(event.sender_id))
-    if (await check_user(event.sender_id)) == False:
-        return await event.reply(f"{ok.user.first_name}, please join my channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/BotzHub")])
     link = get_link(event.text)
     if not link:
         return
+       ok = await bot(GetFullUserRequest(event.sender_id))
+    if (await check_user(event.sender_id)) == False:
+        return await event.reply(f"{ok.user.first_name}, please join my channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/BotzHub")])
     edit = await bot.send_message(event.chat.id, '⏳')
     if 't.me/+' in link:
         xy = await join(userbot, link)
