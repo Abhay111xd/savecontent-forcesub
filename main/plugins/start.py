@@ -12,9 +12,24 @@ from pyrogram import idle
 from main.plugins.main import Bot, userbot
 
 st = "**Hii,\nI am @Pyrogrammers Save restricted Contents bot.**\nSend me any public or private restricted Channel post link.\nI will give you that post.\n**Hit /help to know more.**"
-
+#remove it
+#join check
+async def check_user(id):
+    ok = True
+    try:
+        await Bot(GetParticipantRequest(channel='@pyrogrammers', participant=id))
+        ok = True
+    except UserNotParticipantError:
+        ok = False
+    return ok
+#end
 @bot.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
+    #remove it
+     ok = await Bot(GetFullUserRequest(event.sender_id))
+    if (await check_user(event.sender_id)) == False:
+        return await event.edit(f"{ok.user.first_name}, please join my channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/BotzHub")])
+    #end
     await event.reply(f'{st}', 
                       buttons=[
                         [Button.url("Updates Channel", url="https://t.me/pyrogrammers"),
