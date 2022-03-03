@@ -1,4 +1,3 @@
-# Github.com/Vasusen-code
 
 from main.plugins.helpers import get_link, join, screenshot
 from main.plugins.display_progress import progress_for_pyrogram
