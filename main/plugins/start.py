@@ -27,8 +27,8 @@ async def check_user(id):
 async def start(event):
     ok = await bot(GetFullUserRequest(event.sender_id))
     if (await check_user(event.sender_id)) == False:
-        return await event.edit(f"{ok.user.first_name}, please join my channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/BotzHub")])
-    await event.reply(f'{st}', 
+        return await event.reply(f"{ok.user.first_name}, please join my channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/BotzHub")])
+    await event.edit(f'{st}', 
                       buttons=[
                         [Button.url("Updates Channel", url="https://t.me/pyrogrammers"),
                          Button.url("Support Group", url="https://t.me/+7ScFy39Vckk5MWQ1")],
