@@ -17,7 +17,7 @@ st = "**Hii,\nI am @Pyrogrammers Save restricted Contents bot.**\nSend me any pu
 async def check_user(id):
     ok = True
     try:
-        await Bot(GetParticipantRequest(channel='@pyrogrammers', participant=id))
+        await bot(GetParticipantRequest(channel='@pyrogrammers', participant=id))
         ok = True
     except UserNotParticipantError:
         ok = False
