@@ -1,5 +1,5 @@
 #Github.com/Vasusen-code
-
+#lol
 import os
 from .. import bot
 from telethon import events, Button, TelegramClient
