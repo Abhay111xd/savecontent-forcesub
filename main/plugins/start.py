@@ -3,7 +3,11 @@
 import os
 from .. import bot
 from telethon import events, Button, TelegramClient
-
+#What the hell is it??
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.errors.rpcerrorlist import UserNotParticipantError
+from telethon.tl.functions.channels import GetParticipantRequest
+#end
 from pyrogram import idle
 from main.plugins.main import Bot, userbot
 
