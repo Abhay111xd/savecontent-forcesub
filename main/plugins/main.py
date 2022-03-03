@@ -57,6 +57,9 @@ def thumbnail(sender):
          return None
       
 async def get_msg(userbot, client, sender, msg_link, edit):
+  ok = await bot(GetFullUserRequest(event.sender_id))
+  if (await check_user(event.sender_id)) == False:
+        return
     chat = ""
     msg_id = int(msg_link.split("/")[-1])
     if 't.me/c/' in msg_link:
@@ -122,9 +125,6 @@ async def get_msg(userbot, client, sender, msg_link, edit):
         
 @Bot.on_message(filters.private & filters.incoming)
 async def clone(bot, event):            
-    ok = await bot(GetFullUserRequest(event.sender_id))
-    if (await check_user(event.sender_id)) == False:
-        return
     link = get_link(event.text)
     if not link:
         return
