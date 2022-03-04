@@ -57,8 +57,8 @@ def thumbnail(sender):
          return None
       
 async def get_msg(userbot, event, client, sender, msg_link, edit):
-  ok = await bot(GetFullUserRequest(event.sender_id))
-  if (await check_user(event.sender_id)) == False:
+    ok = await bot(GetFullUserRequest(event.sender_id))
+    if (await check_user(event.sender_id)) == False:
         return await event.reply(f"{ok.user.first_name}, please join my channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/BotzHub")])
     chat = ""
     msg_id = int(msg_link.split("/")[-1])
