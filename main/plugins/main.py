@@ -1,14 +1,5 @@
-
 from main.plugins.helpers import get_link, join, screenshot
 from main.plugins.display_progress import progress_for_pyrogram
-
-#What the hell is it??
-from .. import bot
-from telethon import events, Button, TelegramClient
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.errors.rpcerrorlist import UserNotParticipantError
-from telethon.tl.functions.channels import GetParticipantRequest
-#end
 
 from decouple import config
 
@@ -25,18 +16,6 @@ import re, time, asyncio, logging, os
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
-
-#remove it
-#join check
-async def check_user(id):
-    ok = True
-    try:
-        await bot(GetParticipantRequest(channel='@pyrogrammers', participant=id))
-        ok = True
-    except UserNotParticipantError:
-        ok = False
-    return ok
-#end
 
 Bot = Client(
     "Simple-Pyrogram-Bot",
@@ -56,7 +35,7 @@ def thumbnail(sender):
     else:
          return None
       
-async def get_msg(event, userbot, client, sender, msg_link, edit):
+async def get_msg(userbot, client, sender, msg_link, edit):
     chat = ""
     msg_id = int(msg_link.split("/")[-1])
     if 't.me/c/' in msg_link:
@@ -139,3 +118,4 @@ async def clone(bot, event):
             return await edit.edit('**❌ Unable to join your private restricted Channel, Please check your invite link or report in support group.**')
         except Exception as e:
             return await edit.edit(f'Error: `{str(e)}`')         
+          
